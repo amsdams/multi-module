@@ -16,8 +16,12 @@ defaults:
 on:
   push:
     branches: [ "main" ]
+    paths:
+    - 'j23/kotlin/**'
   pull_request:
     branches: [ "main" ]
+    paths:
+    - 'j23/kotlin/**'
 
 jobs:
   build:
