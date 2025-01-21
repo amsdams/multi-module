@@ -18,12 +18,12 @@ on:
     branches: [ "main" ]
     paths:
     - 'j8/kotlin/**'
-    - '.github/**'
+    - '.github/j8**'
   pull_request:
     branches: [ "main" ]
     paths:
     - 'j8/kotlin/**'
-    - '.github/**'
+    - '.github/j8**'
 
 jobs:
   build:

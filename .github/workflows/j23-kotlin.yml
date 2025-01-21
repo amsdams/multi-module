@@ -18,12 +18,12 @@ on:
     branches: [ "main" ]
     paths:
     - 'j23/kotlin/**'
-    - '.github/**'
+    - '.github/j23**'
   pull_request:
     branches: [ "main" ]
     paths:
     - 'j23/kotlin/**'
-    - '.github/**'
+    - '.github/j23**'
 
 jobs:
   build:
