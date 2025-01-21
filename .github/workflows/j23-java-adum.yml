@@ -50,11 +50,13 @@ jobs:
     - name: git setup
       run: git config --global user.email "julien.langeveld@gmail.com" && git config --global user.name "JL Adum"
 
+    - name: calc branch name
+      run:  echo "NOW=$(date +%s)" >> $GITHUB_ENV
     - name: git branch
-      run: git checkout -b adum
+      run: git checkout -b adum-$NOW
 
     - name: git commit and push
-      run: git commit -a -m 'adum' && git push --set-upstream origin adum
+      run: git commit -a -m 'adum $NOW' && git push --set-upstream origin adum-$NOW
 
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
