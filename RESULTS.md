@@ -2,12 +2,15 @@
 
 ## ps
 
+```shell
 USER   PID  %CPU %MEM      VSZ    RSS   TT  STAT STARTED      TIME COMMAND
 jula 18346   0.1  0.3 423012576 115040 s013  S+   10:58AM   0:04.64 java -jar application/target/application-0.0.8-SNAPSHOT.jar
 jula 18179   0.0  0.2 422927936  84992 s011  S+   10:58AM   0:03.69 java -jar application/target/application-0.0.23-SNAPSHOT.jar
 
-## jmap
+```
 
+## jmap
+```shell
 jmap -histo 18346 | head
 
  num     #instances         #bytes  class name
@@ -19,12 +22,15 @@ jmap -histo 18346 | head
    5:          3808         930072  [B
    6:          7155         844792  java.lang.Class
    7:         21216         678912  java.util.concurrent.ConcurrentHashMap$Node
+```
 
+```shell
 jmap -clstats 18346 | tail -3
 Total = 39                                                    7146  37284864  34516696  
 ChunkSz: Total size of all allocated metaspace chunks
 BlockSz: Total size of all allocated metaspace blocks (each chunk has several blocks)
-
+```
+```shell
 
 jmap -histo 18179 | head
  num     #instances         #bytes  class name (module)
@@ -37,14 +43,18 @@ jmap -histo 18179 | head
    6:         12306        1082928  java.lang.reflect.Method (java.base@23.0.1)
    7:          8582        1019624  java.lang.Class (java.base@23.0.1)
    8:         16700        1012680  [I (java.base@23.0.1)
-
+```
+```shell
 
 jmap -clstats 18179 | tail -3
 Total = 4                                                     8493  35088384  33529248  
 ChunkSz: Total size of all allocated metaspace chunks
 BlockSz: Total size of all allocated metaspace blocks (each chunk has several blocks)
-
+```
 ## scale-up.sh
+
+```shell
+
 jps
 35715 application-0.0.23-SNAPSHOT.jar
 8644 Main
@@ -87,7 +97,8 @@ jps
 35640 application-0.0.23-SNAPSHOT.jar
 35707 application-0.0.23-SNAPSHOT.jar
 35837 application-0.0.23-SNAPSHOT.jar
-
+```
+```shell
 jps
 37827 application-0.0.8-SNAPSHOT.jar
 8644 Main
@@ -130,9 +141,9 @@ jps
 37820 application-0.0.8-SNAPSHOT.jar
 37949 application-0.0.8-SNAPSHOT.jar
 37823 application-0.0.8-SNAPSHOT.jar
-
+```
 ## ab
-
+```shell
 ab -n 2000 -c 4 http://localhost:8008/
 This is ApacheBench, Version 2.3 <$Revision: 1913912 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
@@ -187,8 +198,8 @@ Percentage of the requests served within a certain time (ms)
   98%      1
   99%      2
  100%      4 (longest request)
-
-
+```
+```shell
  ab -n 2000 -c 4 http://localhost:8023/
 This is ApacheBench, Version 2.3 <$Revision: 1913912 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
@@ -243,3 +254,4 @@ Percentage of the requests served within a certain time (ms)
   98%      1
   99%      1
  100%      4 (longest request)
+```
