@@ -6,24 +6,24 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: J23 Java CI with Maven
+name: J8 Kotlin CI with Maven
 
 defaults:
   run:
     shell: bash
-    working-directory: ./j23/java
+    working-directory: ./j8/kotlin
 
 on:
   push:
     branches: [ "main" ]
     paths:
-      - 'j23/java/**'
-      - '.github/**'
+    - '../../../j8/kotlin'
+    - '../..'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'j23/java/**'
-      - '.github/**'
+    - '../../../j8/kotlin'
+    - '../..'
 
 jobs:
   build:
@@ -32,13 +32,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up JDK 23
+    - name: Set up JDK 8
       uses: actions/setup-java@v4
       with:
-        java-version: '23'
+        java-version: '8'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven j23 java
+    - name: Build with Maven J8 kotlin
       run: mvn -B package --file pom.xml
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
