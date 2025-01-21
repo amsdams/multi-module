@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: 'j8 java Adum with Maven'
+name: 'J8 Java Adum with Maven'
 
 defaults:
   run:
