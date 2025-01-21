@@ -27,8 +27,6 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven j23 java
-      run: cd j23/java && mvn -B package --file pom.xml
     - name: Build with Maven j23 kotlin
       run: cd j23/kotlin && mvn -B package --file pom.xml
 
