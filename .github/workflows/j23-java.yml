@@ -11,7 +11,7 @@ name: J23 Java CI with Maven
 defaults:
   run:
     shell: bash
-    working-directory: ./j23/java
+    working-directory: j23/java
 
 on:
   push:
