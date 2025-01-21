@@ -11,18 +11,18 @@ name: J23 Java CI with Maven
 defaults:
   run:
     shell: bash
-    working-directory: j23/java
+    working-directory: ./j23/java
 
 on:
   push:
     branches: [ "main" ]
     paths:
-      - 'j23/java'
+      - 'j23/java/**'
       - '.github/j23-java*'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'j23/java'
+      - 'j23/java/**'
       - '.github/j23-java*'
 
 jobs:
