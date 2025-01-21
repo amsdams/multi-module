@@ -55,8 +55,8 @@ jobs:
       uses: peter-evans/create-pull-request@v5
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: "chore: update maven dependencies"
-        title: "chore: Maven dependency updates"
+        commit-message: "chore: [j23-java] update maven dependencies"
+        title: "chore: [j23-java] Maven dependency updates"
         body: |
           Automated dependency updates via Maven versions plugin
           
@@ -65,6 +65,6 @@ jobs:
           - Verified build and tests
           
           Please review the changes carefully before merging.
-        branch: dependency-updates
+        branch: dependency-updates-j23-java
         delete-branch: true
         labels: dependencies
