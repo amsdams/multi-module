@@ -18,12 +18,12 @@ on:
     branches: [ "main" ]
     paths:
       - 'j8/java/**'
-      - '.github/*/j8-java*.yml'
+      - '.github/*/j8-java-adum.yml'
   pull_request:
     branches: [ "main" ]
     paths:
       - 'j8/java/**'
-      - '.github/*/j8-java*.yml'
+      - '.github/*/j8-java-adum.yml'
 
 jobs:
   build:

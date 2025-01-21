@@ -18,12 +18,12 @@ on:
     branches: [ "main" ]
     paths:
       - 'j23/java/**'
-      - '.github/*/j23-java*.yml'
+      - '.github/*/j23-java-adum.yml'
   pull_request:
     branches: [ "main" ]
     paths:
       - 'j23/java/**'
-      - '.github/*/j23-java*.yml'
+      - '.github/*/j23-java-adum.yml'
 
 jobs:
   build:
