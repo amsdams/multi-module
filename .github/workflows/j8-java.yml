@@ -17,13 +17,13 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'j8/java'
-      - '.github/j8-java*'
+      - 'j8/java/**'
+      - '.github/**'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'j8/java'
-      - '.github/j8-java*'
+      - 'j8/java/**'
+      - '.github/**'
 
 jobs:
   build:

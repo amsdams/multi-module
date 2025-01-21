@@ -18,7 +18,7 @@ on:
     branches: [ "main" ]
     paths:
     - 'j23/kotlin/**'
-    - '.github/**
+    - '.github/**'
   pull_request:
     branches: [ "main" ]
     paths:
