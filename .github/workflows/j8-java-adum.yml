@@ -29,7 +29,7 @@ on:
   #    - '.github/*/j8-java-adum.yml'
 
 jobs:
-  build:
+  update-dependencies:
 
     runs-on: ubuntu-latest
 
