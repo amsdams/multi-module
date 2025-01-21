@@ -17,13 +17,13 @@ on:
   push:
     branches: [ "main" ]
     paths:
-    - '../../../j23/kotlin'
-    - '../..'
+    - 'j23/kotlin'
+    - '.github/**'
   pull_request:
     branches: [ "main" ]
     paths:
-    - '../../../j23/kotlin'
-    - '../..'
+    - 'j23/kotlin'
+    - '.github/**'
 
 jobs:
   build:

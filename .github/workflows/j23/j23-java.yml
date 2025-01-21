@@ -17,13 +17,13 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - '../../../j23/java'
-      - '../..'
+      - 'j23/java'
+      - '.github/**'
   pull_request:
     branches: [ "main" ]
     paths:
-      - '../../../j23/java'
-      - '../..'
+      - 'j23/java'
+      - '.github/**'
 
 jobs:
   build:
