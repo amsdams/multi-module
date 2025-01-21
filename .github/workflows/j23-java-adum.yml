@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: J23 Java Adum with Maven
+name: 'J23 Java Adum with Maven'
 
 defaults:
   run:
@@ -38,8 +38,11 @@ jobs:
         java-version: '23'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven j23 java
+    - name: display-dependency-updates
       run: mvn -B versions:display-dependency-updates --file pom.xml
+
+    - name: update-parent
+      run: mvn -B versions:update-parent --file pom.xml
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph

@@ -7,10 +7,24 @@
 #
 # Source repository: https://github.com/actions/dependency-review-action
 # Public documentation: https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review#dependency-review-enforcement
-name: 'Dependency review'
+name: 'J23 Java Dependency review'
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./j23/java
+
 on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'j23/java/**'
+      - '.github/**'
   pull_request:
     branches: [ "main" ]
+    paths:
+      - 'j23/java/**'
+      - '.github/**'
 
 # If using a dependency submission action in this workflow this permission will need to be set to:
 #
