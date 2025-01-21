@@ -47,6 +47,9 @@ jobs:
     - name: update-properties
       run: mvn -B versions:update-properties --file pom.xml
 
+    - name: git setup
+      run: git config --global user.email "julien.langeveld@gmail.com" && git config --global user.name "JL Adum"
+
     - name: git branch
       run: git checkout -b adum
 
