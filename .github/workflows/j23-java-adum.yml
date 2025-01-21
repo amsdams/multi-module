@@ -44,6 +44,21 @@ jobs:
     - name: update-parent
       run: mvn -B versions:update-parent --file pom.xml
 
+    - name: update-properties
+      run: mvn -B versions:update-properties --file pom.xml
+
+    - name: git setup
+      run: git config --global user.email "julien.langeveld@gmail.com" && git config --global user.name "JL Adum"
+
+    - name: calc branch name
+      run:  echo "NOW=$(date +%s)" >> $GITHUB_ENV
+    - name: git branch
+      run: git checkout -b adum-$NOW
+
+    - name: git commit and push
+      run: git commit -a -m 'adum $NOW' && git push --set-upstream origin adum-$NOW
+
+
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
     #  uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
