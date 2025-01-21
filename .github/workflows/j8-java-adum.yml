@@ -14,16 +14,19 @@ defaults:
     working-directory: ./j8/java
 
 on:
-  push:
-    branches: [ "main" ]
-    paths:
-      - 'j8/java/**'
-      - '.github/*/j8-java-adum.yml'
-  pull_request:
-    branches: [ "main" ]
-    paths:
-      - 'j8/java/**'
-      - '.github/*/j8-java-adum.yml'
+  schedule:
+    - cron: '0 0 * * 0'  # Runs weekly on Sunday at midnight
+  workflow_dispatch:      # Allows manual trigger
+  #push:
+  #  branches: [ "main" ]
+  #  paths:
+  #    - 'j8/java/**'
+  #    - '.github/*/j8-java-adum.yml'
+  #pull_request:
+  #  branches: [ "main" ]
+  #  paths:
+  #    - 'j8/java/**'
+  #    - '.github/*/j8-java-adum.yml'
 
 jobs:
   build:
