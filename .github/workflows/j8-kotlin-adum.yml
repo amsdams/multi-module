@@ -6,24 +6,24 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: 'J23 Kotlin Adum with Maven'
+name: 'j8 Kotlin Adum with Maven'
 
 defaults:
   run:
     shell: bash
-    working-directory: ./j23/kotlin
+    working-directory: ./j8/kotlin
 
 on:
   push:
     branches: [ "main" ]
     paths:
-      - 'j23/kotlin/**'
-      - '.github/*/j23-kotlin*.yml'
+      - 'j8/kotlin/**'
+      - '.github/*/j8-kotlin*.yml'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'j23/kotlin/**'
-      - '.github/*/j23-kotlin*.yml'
+      - 'j8/kotlin/**'
+      - '.github/*/j8-kotlin*.yml'
 
 jobs:
   build:
