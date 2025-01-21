@@ -50,6 +50,9 @@ jobs:
     - name: git setup
       run: git config --global user.email "julien.langeveld@gmail.com" && git config --global user.name "JL Adum"
 
+    - name: git status
+      run: git status
+
     - name: calc branch name
       run:  echo "NOW=$(date +%s)" >> $GITHUB_ENV
     - name: git branch
