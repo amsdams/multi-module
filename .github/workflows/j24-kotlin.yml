@@ -17,12 +17,12 @@ on:
   push:
     branches: [ "main" ]
     paths:
-    - 'j24/kotlin/**'
+    - '../../j24/kotlin'
     - '.github/*/j24-kotlin.yml'
   pull_request:
     branches: [ "main" ]
     paths:
-    - 'j24/kotlin/**'
+    - '../../j24/kotlin'
     - '.github/*/j24-kotlin.yml'
 
 jobs:

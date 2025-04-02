@@ -17,12 +17,12 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'j24/java/**'
+      - '../../j24/java'
       - '.github/*/j24-java.yml'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'j24/java/**'
+      - '../../j24/java'
       - '.github/*/j24-java.yml'
 
 jobs:
