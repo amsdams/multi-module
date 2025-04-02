@@ -14,6 +14,7 @@ defaults:
     working-directory: ./j23/kotlin
 
 on:
+  workflow_dispatch:      # Allows manual trigger
   push:
     branches: [ "main" ]
     paths:
