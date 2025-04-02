@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.example</groupId>
     <artifactId>application</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.8-SNAPSHOT</version>
     <name>application</name>
     <description>Demo project for Spring Boot</description>
     <url/>
@@ -74,6 +74,16 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.16.1</version>
+                <configuration>
+                    <parentVersion>[,3.0.0)</parentVersion>
+                    <generateBackupPoms>false</generateBackupPoms>
+                    <allowSnapshots>false</allowSnapshots>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
