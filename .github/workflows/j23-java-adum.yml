@@ -43,7 +43,9 @@ jobs:
         cache: maven
 
     - name: Dependency check
-      run: mvn -q org.owasp:dependency-check-maven:check -DnvdApiKey=${{ secrets.NVD_API_KEY }} -DfailOnError=false
+      env:
+        NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+      run: mvn -q org.owasp:dependency-check-maven:check -DnvdApiKey=${{ NVD_API_KEY }} -DfailOnError=false
 
     - name: Update parent version
       run: mvn -q versions:update-parent -DgenerateBackupPoms=false
