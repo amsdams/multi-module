@@ -39,7 +39,7 @@ jobs:
       shell: bash
       run: |
         echo "$SECRETS_CONTEXT"
-        echo "VARS_CONTEXT"
+        echo "$VARS_CONTEXT"
       env:
         SECRETS_CONTEXT: ${{ toJson(secrets) }}
         VARS_CONTEXT: ${{ toJson(vars) }}
