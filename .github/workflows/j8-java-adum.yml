@@ -42,6 +42,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+    - name: Dependency check
+      run: mvn org.owasp:dependency-check-maven:check
+
     - name: Update parent version
       run: mvn versions:update-parent -DgenerateBackupPoms=false
 
