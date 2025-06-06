@@ -45,7 +45,7 @@
 
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>library</artifactId>
+            <artifactId>library-java</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
