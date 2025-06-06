@@ -6,12 +6,12 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: 'J21 Java Dep Checks with Maven'
+name: 'J24 Java Dep Checks with Maven'
 
 defaults:
   run:
     shell: bash
-    working-directory: ./j21/java
+    working-directory: ./j24/java
 
 on:
   schedule:
@@ -20,13 +20,13 @@ on:
   #push:
   #  branches: [ "main" ]
   #  paths:
-  #    - 'j21/java/**'
-  #    - '.github/*/j21-java-adum.yml'
+  #    - 'j24/java/**'
+  #    - '.github/*/j24-java-adum.yml'
   #pull_request:
   #  branches: [ "main" ]
   #  paths:
-  #    - 'j21/java/**'
-  #    - '.github/*/j21-java-adum.yml'
+  #    - 'j24/java/**'
+  #    - '.github/*/j24-java-adum.yml'
 
 jobs:
   update-dependencies:
@@ -35,10 +35,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up JDK 21
+      - name: Set up JDK 24
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
+          java-version: '24'
           distribution: 'temurin'
           cache: maven
 
