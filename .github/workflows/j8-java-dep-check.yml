@@ -6,8 +6,8 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: 'J8 Java Adum with Maven'
-
+name: 'J8 Java Dep Checks with Maven'
+s
 defaults:
   run:
     shell: bash
