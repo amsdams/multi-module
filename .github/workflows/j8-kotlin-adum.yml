@@ -43,16 +43,16 @@ jobs:
         cache: maven
 
     #- name: Dependency check
-#     run: mvn org.owasp:dependency-check-maven:check
+#     run: mvn -q org.owasp:dependency-check-maven:check
 
     - name: Update parent version
-      run: mvn versions:update-parent -DgenerateBackupPoms=false
+      run: mvn -q versions:update-parent -DgenerateBackupPoms=false
 
     - name: Update dependencies
-      run: mvn versions:use-latest-releases -DgenerateBackupPoms=false
+      run: mvn -q versions:use-latest-releases -DgenerateBackupPoms=false
 
     - name: Run tests
-      run: mvn clean verify
+      run: mvn -q clean verify
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5

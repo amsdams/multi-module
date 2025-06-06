@@ -53,4 +53,4 @@ jobs:
       - name: Dependency check
         env:
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
-        run: mvn verify org.owasp:dependency-check-maven:8.4.3:aggregate -DnvdApiKey=${{env.NVD_API_KEY}} -DfailOnError=false
+        run: mvn -q verify org.owasp:dependency-check-maven:8.4.3:aggregate -DnvdApiKey=${{env.NVD_API_KEY}} -DfailOnError=false
