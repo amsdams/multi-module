@@ -57,13 +57,13 @@ jobs:
 #      run: mvn org.owasp:dependency-check-maven:check -DnvdApiKey=${{env.NVD_API_KEY}} -DfailOnError=false
 
     - name: Update parent version
-      run: mvn -q versions:update-parent -DgenerateBackupPoms=false
+      run: mvn versions:update-parent -DgenerateBackupPoms=false
 
     - name: Update dependencies
-      run: mvn -q versions:use-latest-releases -DgenerateBackupPoms=false
+      run: mvn versions:use-latest-releases -DgenerateBackupPoms=false
 
     - name: Run tests
-      run: mvn -q clean verify
+      run: mvn clean verify
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5
