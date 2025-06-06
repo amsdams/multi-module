@@ -7,7 +7,7 @@
 # documentation.
 
 name: 'J8 Java Dep Checks with Maven'
-s
+
 defaults:
   run:
     shell: bash
