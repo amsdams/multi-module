@@ -15,10 +15,10 @@ cd $CURRENT_PWD
 cd $J24_KOTLIN && mvn -B package --file pom.xml
 cd $CURRENT_PWD
 
-#j23-java.yml:
+#j21-java.yml:
 cd $J23_JAVA &&  mvn -B package --file pom.xml
 cd $CURRENT_PWD
-#j23-kotlin.yml:      run
+#j21-kotlin.yml:      run
 cd $J23_KOTLIN && mvn -B package --file pom.xml
 cd $CURRENT_PWD
 #j8-java.yml:      run:

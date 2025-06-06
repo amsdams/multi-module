@@ -32,7 +32,7 @@ mvn -B package --file pom.xml
 echo `pwd`
  cd $CURRENT_PWD
  echo `pwd`
-#j23-java-adum.yml:
+#j21-java-adum.yml:
 cd $J23_JAVA
 mvn versions:update-parent -DgenerateBackupPoms=false
 mvn versions:use-latest-versions -DgenerateBackupPoms=false
@@ -45,7 +45,7 @@ mvn -B package --file pom.xml
  cd $CURRENT_PWD
  echo `pwd`
 
-#j23-kotlin-adum.yml:      run:
+#j21-kotlin-adum.yml:      run:
 cd $J23_KOTLIN
 mvn versions:update-parent -DgenerateBackupPoms=false
 mvn versions:use-latest-versions -DgenerateBackupPoms=false

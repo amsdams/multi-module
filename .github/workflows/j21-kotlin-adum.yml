@@ -1,0 +1,73 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: 'J21 Kotlin Adum with Maven'
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./j21/kotlin
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Runs weekly on Sunday at midnight
+  workflow_dispatch:      # Allows manual trigger
+  #push:
+  #  branches: [ "main" ]
+  #  paths:
+  #    - 'j21/kotlin/**'
+  #    - '.github/*/j21-kotlin-adum.yml'
+  #pull_request:
+  #  branches: [ "main" ]
+  #  paths:
+  #    - 'j21/kotlin/**'
+  #    - '.github/*/j21-kotlin-adum.yml'
+
+jobs:
+  update-dependencies:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: maven
+
+    #- name: Dependency check
+#     run: mvn org.owasp:dependency-check-maven:check
+
+    - name: Update parent version
+      run: mvn versions:update-parent -DgenerateBackupPoms=false
+
+    - name: Update dependencies
+      run: mvn versions:use-latest-releases -DgenerateBackupPoms=false
+
+    - name: Run tests
+      run: mvn clean verify
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "chore: [j21-kotlin] update maven dependencies"
+        title: "chore: [j21-kotlin] Maven dependency updates"
+        body: |
+          Automated dependency updates via Maven versions plugin
+          
+          - Updated parent version (if applicable)
+          - Updated dependencies to latest releases
+          - Verified build and tests
+          
+          Please review the changes carefully before merging.
+        branch: dependency-updates-j21-kotlin
+        delete-branch: true
+        labels: dependencies
