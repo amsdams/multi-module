@@ -50,3 +50,7 @@ jobs:
         env:
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
           VARS_CONTEXT: ${{ toJson(vars) }}
+      - name: Dependency check
+        env:
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+        run: mvn org.owasp:dependency-check-maven:check -DnvdApiKey=${{env.NVD_API_KEY}} -DfailOnError=false
