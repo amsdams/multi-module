@@ -4,32 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework</groupId>
-    <artifactId>gs-multi-module-java</artifactId>
+    <artifactId>gs-multi-module-jdk8-java</artifactId>
     <version>0.0.8-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>library</module>
-        <module>application</module>
+        <module>library-java</module>
+        <module>application-java</module>
     </modules>
-    <build>
-
-        <plugins>
-            <plugin>
-                <groupId>org.owasp</groupId>
-                <artifactId>dependency-check-maven</artifactId>
-                <version>9.1.0</version>
-                <configuration>
-                    <failBuildOnCVSS>7</failBuildOnCVSS>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>

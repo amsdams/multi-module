@@ -5,13 +5,15 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.5</version>
+        <version>2.7.18</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>library</artifactId>
-    <version>0.0.21-SNAPSHOT</version>
+    <artifactId>library-kotlin</artifactId>
+    <version>0.0.8-SNAPSHOT</version>
+<!--
     <name>library</name>
+-->
     <description>Demo project for Spring Boot</description>
     <url/>
     <licenses>
@@ -27,7 +29,7 @@
         <url/>
     </scm>
     <properties>
-        <java.version>21</java.version>
+        <java.version>1.8</java.version>
         <kotlin.version>2.1.20</kotlin.version>
     </properties>
     <dependencies>
@@ -58,6 +60,9 @@
             <artifactId>kotlin-test-junit5</artifactId>
             <scope>test</scope>
         </dependency>
+
+
+
     </dependencies>
 
     <build>
@@ -68,6 +73,16 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.16.1</version>
+                <configuration>
+                    <parentVersion>[,3.0.0)</parentVersion>
+                    <generateBackupPoms>false</generateBackupPoms>
+                    <allowSnapshots>false</allowSnapshots>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>

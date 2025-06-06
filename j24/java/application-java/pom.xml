@@ -9,9 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>application</artifactId>
+    <artifactId>application-java</artifactId>
     <version>0.0.24-SNAPSHOT</version>
+<!--
     <name>application</name>
+-->
     <description>Demo project for Spring Boot</description>
     <url/>
     <licenses>
@@ -37,17 +39,10 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
             <groupId>com.example</groupId>
             <artifactId>library</artifactId>
             <version>${project.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

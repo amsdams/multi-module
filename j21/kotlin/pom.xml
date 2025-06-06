@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework</groupId>
-    <artifactId>gs-multi-module-kotlin</artifactId>
+    <artifactId>gs-multi-module-jdk21-kotlin</artifactId>
     <version>0.0.21-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>library</module>
-        <module>application</module>
+        <module>library-kotlin</module>
+        <module>application-kotlin</module>
     </modules>
 
 </project>
